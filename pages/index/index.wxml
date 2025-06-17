@@ -9,4 +9,4 @@
 		<image src="{{'https://oss.lry.icu/wx_store/swiperImgs/' + item.swiperPic}}"></image>
 	</swiper-item>
 </swiper>
-<view class="aa">11</view>
+<view class="aa">111</view>
