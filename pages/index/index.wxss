@@ -1,0 +1,49 @@
+page {
+	background-color:#eee;
+}
+
+.head {
+	float: left;
+	width: 750rpx;
+	height: 90rpx;
+	background-color: #ff5307;
+}
+
+.head .search {
+	float: left;
+	width: 740rpx;
+	height: 76rpx;
+	background-color: #fff;
+	margin: 8rpx 6rpx;
+	border-radius: 10rpx;
+}
+
+.head .search icon {
+	float: left;
+	margin-top: 22rpx;
+	margin-left: 320rpx;
+}
+
+.head .search .search-text {
+	float: right;
+	color: #777;
+	line-height: 76rpx;
+	margin-right: 320rpx;
+	font-size: 30rpx;
+}
+
+.swiper {
+	width: 750rpx;
+	height: 350rpx;
+}
+
+.swiper image {
+	float: left;
+	width: 750rpx;
+	height: 350rpx;
+}
+
+.aa {
+	float: left;
+	margin-top: 90rpx;
+}

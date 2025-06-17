@@ -1,0 +1,12 @@
+<view class="head">
+	<view class="search">
+		<icon type="search" size="34rpx"></icon>
+		<view class="search-text">搜索</view>
+	</view>
+</view>
+<swiper class="swiper" indicator-dots autoplay 	indicator-color="rgba(255, 255, 255, 0.9)" indicator-active-color="rgba(255, 0, 0, 1)" interval="2000" circular>
+	<swiper-item wx:for="{{productLbtPic}}" wx:key="id">
+		<image src="{{'https://oss.lry.icu/wx_store/swiperImgs/' + item.swiperPic}}"></image>
+	</swiper-item>
+</swiper>
+<view class="aa">11</view>

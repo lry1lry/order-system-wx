@@ -1,0 +1,42 @@
+{
+  "pages": [
+		"pages/index/index",
+		"pages/type/type",
+		"pages/cart/cart",
+		"pages/my/my"
+  ],
+  "window": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "好食乐",
+		"navigationBarBackgroundColor": "#fc2d3d"
+	},
+	"tabBar": {
+		"selectedColor": "#ff5700",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "首页",
+			"iconPath": "/image/_home.png",
+			"selectedIconPath": "/image/home.png"
+		},{
+			"pagePath": "pages/type/type",
+			"text": "分类",
+			"iconPath": "/image/_category.png",
+			"selectedIconPath": "/image/category.png"
+		},{
+			"pagePath": "pages/cart/cart",
+			"text": "购物车",
+			"iconPath": "/image/_cart.png",
+			"selectedIconPath": "/image/cart.png"
+		},{
+			"pagePath": "pages/my/my",
+			"text": "我的",
+			"iconPath": "/image/_my.png",
+			"selectedIconPath": "/image/my.png"
+		}]
+	},
+  "sitemapLocation": "sitemap.json",
+	"lazyCodeLoading": "requiredComponents",
+	"usingComponents": {
+		"van-button": "@vant/weapp/button/index"
+	}	
+}
