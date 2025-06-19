@@ -1,0 +1,18 @@
+<view class="input">
+	<view class="input-content">
+		<input type="text" bindinput="searchInput" model:value="{{searchValue}}" placeholder="请输入菜品关键字" />
+		<image src="/image/x1.png" hidden="{{searchValue === '' ? true : false}}" bindtap="clearInput"></image>
+		<button bindtap="search">搜索</button>
+	</view>
+</view>
+<view class="content" style="height: {{contentHeight}}">
+	<view class="product-item" wx:for="{{searchProductList1}}" wx:key="id" hidden="{{!((searchValue !== '') && (searchProductList.length !== 0))}}"><rich-text nodes="{{item}}"></rich-text></view>
+	<icon type="warn" color="#c9c9c9" class="warn-icon" size="100" hidden="{{!((searchValue !== '') && (searchProductList.length === 0))}}"></icon>
+	<view class="not-found" hidden="{{!((searchValue !== '') && (searchProductList.length === 0))}}">抱歉！暂无相关商品</view>
+	<view class="history" hidden="{{!(searchValue === '')}}">
+		<view class="history-head">
+			<view class="history-title">搜索历史</view>
+			<image src="/image/rabbish.png"></image>
+		</view>
+	</view>
+</view>

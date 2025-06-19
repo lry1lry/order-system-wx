@@ -1,12 +1,22 @@
 <view class="head">
-	<view class="search">
+	<view class="search" bindtap="goSearch">
 		<icon type="search" size="34rpx"></icon>
 		<view class="search-text">搜索</view>
 	</view>
 </view>
-<swiper class="swiper" indicator-dots autoplay 	indicator-color="rgba(255, 255, 255, 0.9)" indicator-active-color="rgba(255, 0, 0, 1)" interval="2000" circular>
+<swiper class="swiper" indicator-dots autoplay indicator-color="rgba(255, 255, 255, 0.9)" indicator-active-color="rgba(255, 0, 0, 1)" interval="2000" circular>
 	<swiper-item wx:for="{{productLbtPic}}" wx:key="id">
 		<image src="{{'https://oss.lry.icu/wx_store/swiperImgs/' + item.swiperPic}}"></image>
 	</swiper-item>
 </swiper>
-<view class="aa">111</view>
+<view class="big-type">
+	<image src="{{'https://oss.lry.icu/wx_store/bigTypeImgs/' + item.image}}" wx:for="{{bigTypeList}}" wx:key="id"></image>
+</view>
+<view class="hot-title">热门推荐</view>
+<view class="hot-item" wx:for="{{hotProductList}}" wx:key="id">
+	<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + item.proPic}}"></image>
+	<view class="product-name">{{item.name}}</view>
+	<view class="product-price"><text>￥</text>{{item.price}}</view>
+	<view class="sale">已售{{item.sale}}</view>
+</view>
+

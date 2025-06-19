@@ -1,5 +1,5 @@
 page {
-	background-color:#eee;
+	background-color:#f3f7fa;
 }
 
 .head {
@@ -43,7 +43,89 @@ page {
 	height: 350rpx;
 }
 
-.aa {
+.big-type {
 	float: left;
-	margin-top: 90rpx;
+	width: 750rpx;
+	margin-top: 92rpx;
+}
+
+.big-type image {
+	float: left;
+	width: 150rpx;
+	height: 160rpx;
+	margin-top: 20rpx;
+}
+
+.big-type image:nth-child(n + 6) {
+	margin-top: 10rpx;
+}
+
+.hot-title {
+	float: left;
+	width: 750rpx;
+	height: 90rpx;
+	margin-top: 10rpx;
+	background-color: #f3f7fa;
+	line-height: 90rpx;
+	font-weight: 700;
+	font-size: 36rpx;
+	padding-left: 20rpx;
+	color: #000;
+}
+
+.hot-item {
+	float: left;
+	width: 348rpx;
+	height: 468rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+	overflow: hidden;
+}
+
+.hot-item:nth-child(2n + 5) {
+	margin-left: 18rpx;
+	margin-right: 9rpx;
+}
+
+.hot-item:nth-child(2n + 6) {
+	margin-left: 9rpx;
+	margin-right: 18rpx;
+}
+
+.hot-item:nth-child(n + 7) {
+	margin-top: 18rpx;
+}
+
+.hot-item image {
+	float: left;
+	width: 348rpx;
+	height: 348rpx;
+}
+
+.hot-item .product-name {
+	float: left;
+	width: 360rpx;
+	height: 50rpx;
+	font-size: 32rpx;
+	padding-left: 20rpx;
+}
+
+.hot-item .product-price {
+	float: left;
+	height: 50rpx;
+	font-size: 32rpx;
+	padding-left: 20rpx;
+	color: red;
+}
+
+.hot-item .product-price text {
+	font-size: 24rpx;
+}
+
+.hot-item .sale {
+	float: left;
+	height: 50rpx;
+	font-size: 32rpx;
+	padding-left: 20rpx;
+	color: gray;
 }

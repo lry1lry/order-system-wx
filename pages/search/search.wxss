@@ -1,0 +1,118 @@
+page {
+	background-color: #f3f7fa;
+}
+
+.input {
+	float: left;
+	width: 750rpx;
+	height: 80rpx;
+	margin-top: 20rpx;
+}
+
+.input .input-content {
+	float: left;
+	width: 700rpx;
+	height: 70rpx;
+	margin: 5rpx 25rpx;
+	border: 1px solid red;
+	border-radius: 20rpx;
+}
+
+.input .input-content input {
+	float: left;
+	width: 500rpx;
+	height: 60rpx;
+	margin-top: 4rpx;
+	margin-left: 30rpx;
+	font-size: 36rpx;
+}
+
+.input .input-content image {
+	float: left;
+	width: 40rpx;
+	height: 40rpx;
+	background-color: #ccc;
+	border-radius: 20rpx;
+	margin-top: 15rpx;
+	margin-left: 10rpx;
+}
+
+.input .input-content button {
+	float: right;
+	width: 100rpx;
+	height: 60rpx;
+	margin-top: 4rpx;
+	margin-right: 5rpx;
+	border-radius: 20rpx;
+	background-color: red;
+	font-size: 28rpx;
+	color: white;
+	padding: 0;
+	line-height: 60rpx;
+}
+
+.content {
+	float: left;
+	width: 750rpx;
+	background-color: white;
+	margin-top: 20rpx;
+	border-top-left-radius: 40rpx;
+	border-top-right-radius: 40rpx;
+}
+
+.product-item {
+	float: left;
+	width: 750rpx;
+	height: 100rpx;
+	margin-top: 10rpx;
+	border-bottom: 2rpx solid lightgray;
+	line-height: 100rpx;
+	font-size: 36rpx;
+	padding-left: 25rpx;
+}
+
+.history {
+	float: left;
+	width: 750rpx;
+}
+
+.history .history-head {
+	float: left;
+	width: 750rpx;
+	height: 80rpx;
+}
+
+.history .history-head .history-title {
+	float: left;
+	height: 80rpx;
+	font-size: 36rpx;
+	font-weight: 700;
+	line-height: 80rpx;
+	padding-left: 30rpx;
+}
+
+.history .history-head image {
+	float: left;
+	width: 60rpx;
+	height: 50rpx;
+	padding-left: 10rpx;
+	margin-top: 15rpx;
+}
+
+.warn-icon {
+	float: left;
+	margin: 0 280rpx;
+	margin-top: 100rpx;
+}
+
+.not-found {
+	float: left;
+	font-size: 40rpx;
+	width: 750rpx;
+	text-align: center;
+	margin-top: 20rpx;
+}
+
+.content .product-item .special {
+	color: red;
+}
