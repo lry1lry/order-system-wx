@@ -1,1 +1,68 @@
-/* pages/my/my.wxss */
+.head {
+	float: left;
+	width: 750rpx;
+	height: 300rpx;
+	background-color: #fc2d3d;
+}
+
+.head image {
+	float: left;
+	width: 120rpx;
+	height: 120rpx;
+	margin-top: 90rpx;
+	margin-left: 50rpx;
+	border-radius: 60rpx;
+}
+
+.head .head-right {
+	float: left;
+	width: 550rpx;
+	height: 200rpx;
+	margin-top: 50rpx;
+}
+
+.head .not-login-title {
+	float: left;
+	width: 550rpx;
+	color: white;
+	font-size: 36rpx;
+	margin-top: 60rpx;
+	margin-left: 20rpx;
+}
+
+.head .not-login-text {
+	float: left;
+	width: 550rpx;
+	color: white;
+	font-size: 26rpx;
+	margin-top: 12rpx;
+	margin-left: 20rpx;
+}
+
+.head .login-name {
+	float: left;
+	width: 550rpx;
+	color: white;
+	font-size: 36rpx;
+	margin-top: 70rpx;
+	margin-left: 20rpx;
+}
+
+.nickname-input {
+	width: 0;
+	height: 0;
+}
+
+van-cell {
+	float: left;
+	width: 750rpx;
+	background-color: pink;
+}
+
+van-cell:nth-child(n + 5) {
+	margin-top: 20rpx;
+}
+
+.title-class {
+	font-size: 32rpx;
+}

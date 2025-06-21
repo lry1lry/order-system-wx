@@ -1,0 +1,35 @@
+<view class="input">
+	<view class="input-content">
+		<view class="product-value van-ellipsis">{{productValue}}</view>
+	</view>
+</view>
+<view class="content" style="height: {{contentHeight}}">
+	<icon type="warn" color="#c9c9c9" class="warn-icon" size="100" hidden="{{!(isShowError)}}"></icon>
+	<view class="not-found" hidden="{{!(isShowError)}}">抱歉！暂无相关商品</view>
+	<van-tabs active="{{ active }}" animated bindchange="changeTab" swipeable bindclick="clickTab">
+		<van-tab title="综合">
+			<view class="all-product-item" wx:for="{{allProductList}}" wx:key="id" bindtap="goProductDetail" data-id="{{item.id}}">
+				<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + item.proPic}}"></image>
+				<view class="product-name van-multi-ellipsis--l2">{{item.name + ' ' + item.description}}</view>
+				<view class="product-price"><text>￥</text>{{item.price}}</view>
+				<view class="product-sale">已售{{item.sale}}</view>
+			</view>
+		</van-tab>
+		<van-tab title="销量">
+			<view class="all-product-item" wx:for="{{allProductList}}" wx:key="id" bindtap="goProductDetail" data-id="{{item.id}}">
+				<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + item.proPic}}"></image>
+				<view class="product-name van-multi-ellipsis--l2">{{item.name + ' ' + item.description}}</view>
+				<view class="product-price"><text>￥</text>{{item.price}}</view>
+				<view class="product-sale">已售{{item.sale}}</view>
+			</view>
+		</van-tab>
+		<van-tab title="价格">
+			<view class="all-product-item" wx:for="{{allProductList}}" wx:key="id" bindtap="goProductDetail" data-id="{{item.id}}">
+				<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + item.proPic}}"></image>
+				<view class="product-name van-multi-ellipsis--l2">{{item.name + ' ' + item.description}}</view>
+				<view class="product-price"><text>￥</text>{{item.price}}</view>
+				<view class="product-sale">已售{{item.sale}}</view>
+			</view>
+		</van-tab>
+	</van-tabs>
+</view>

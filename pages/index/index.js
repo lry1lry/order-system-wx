@@ -43,5 +43,10 @@ Page({
 		wx.navigateTo({
 			url: '/pages/search/search',
 		})
+	},
+	goProductDetail(e) {
+		wx.navigateTo({
+			url: `/pages/productDetail/productDetail?id=${e.currentTarget.dataset.id}`,
+		})
 	}
 })

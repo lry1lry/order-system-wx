@@ -79,15 +79,14 @@ page {
 .history .history-head {
 	float: left;
 	width: 750rpx;
-	height: 80rpx;
+	height: 60rpx;
 }
 
 .history .history-head .history-title {
 	float: left;
-	height: 80rpx;
 	font-size: 36rpx;
 	font-weight: 700;
-	line-height: 80rpx;
+	line-height: 82rpx;
 	padding-left: 30rpx;
 }
 
@@ -96,7 +95,7 @@ page {
 	width: 60rpx;
 	height: 50rpx;
 	padding-left: 10rpx;
-	margin-top: 15rpx;
+	margin-top: 17rpx;
 }
 
 .warn-icon {
@@ -115,4 +114,16 @@ page {
 
 .content .product-item .special {
 	color: red;
+}
+
+.content .history-content {
+	float: left;
+	height: 60rpx;
+	background-color: #eee;
+	font-size: 26rpx;
+	margin-left: 25rpx;
+	margin-top: 22rpx;
+	line-height: 60rpx;
+	padding: 0 17rpx;
+	border-radius: 10rpx;
 }

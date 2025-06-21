@@ -6,13 +6,16 @@
 	</view>
 </view>
 <view class="content" style="height: {{contentHeight}}">
-	<view class="product-item" wx:for="{{searchProductList1}}" wx:key="id" hidden="{{!((searchValue !== '') && (searchProductList.length !== 0))}}"><rich-text nodes="{{item}}"></rich-text></view>
+	<view class="product-item" wx:for="{{searchProductList1}}" wx:key="id" hidden="{{!((searchValue !== '') && (searchProductList.length !== 0))}}" bindtap="goProductDetail" data-id="{{item.id}}" data-name="{{item.name}}">
+		<rich-text nodes="{{item.itemStr}}"></rich-text>
+	</view>
 	<icon type="warn" color="#c9c9c9" class="warn-icon" size="100" hidden="{{!((searchValue !== '') && (searchProductList.length === 0))}}"></icon>
 	<view class="not-found" hidden="{{!((searchValue !== '') && (searchProductList.length === 0))}}">抱歉！暂无相关商品</view>
 	<view class="history" hidden="{{!(searchValue === '')}}">
 		<view class="history-head">
 			<view class="history-title">搜索历史</view>
-			<image src="/image/rabbish.png"></image>
+			<image src="/image/rabbish.png" bindtap="clearHistory"></image>
 		</view>
+		<view class="history-content" wx:for="{{historyList}}" wx:key="index" bindtap="goProductDetail" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
 	</view>
 </view>

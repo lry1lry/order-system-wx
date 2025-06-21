@@ -1,1 +1,26 @@
-<van-button type="info">信息按钮</van-button>
+<view class="head">
+	<view bindtap="login" hidden="{{!(openId === '')}}">
+		<image src="/image/not_login_pic.png"></image>
+		<view class="head-right">
+			<view class="not-login-title">未登录</view>
+			<view class="not-login-text">点此账号登录</view>
+		</view>
+	</view>
+	<view hidden="{{!(openId !== '')}}">
+		<label for="avatar">
+			<image src="{{userPic}}"></image>
+		</label>
+		<view class="head-right">
+			<label for="name" hidden="{{!(username === '')}}">
+				<view class="login-name">点此获取昵称</view>
+			</label>
+			<view class="login-name" hidden="{{!(username !== '')}}">{{username}}</view>
+		</view>
+	</view>
+</view>
+<button open-type="chooseAvatar" id="avatar" bindchooseavatar="getAvatar"></button>
+<input type="nickname" id="name" class="nickname-input" model:value="{{username}}" bindinput="nickNameInput" />
+<van-cell title="我的订单" is-link title-class="title-class" icon="coupon-o"/>
+<view hidden="{{!(openId !== '')}}">
+  <van-cell title="退出" is-link title-class="title-class" icon="ellipsis" bindtap="exit"/>
+</view>
