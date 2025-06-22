@@ -4,6 +4,7 @@ const wxUserInfoBaseUrl = "http://localhost:8080/wxUserInfo"
 const uploadBaseUrl = "http://localhost:8080/upload"
 const addressBaseUrl = "http://localhost:8080/address"
 const cartBaseUrl = "http://localhost:8080/cart"
+const newOrderBaseUrl = "http://localhost:8080/newOrder"
 
 // const productBaseUrl = "https://wx.lry.icu:618/product"
 // const bigTypeBaseUrl = "https://wx.lry.icu:618/bigtype"
@@ -19,5 +20,6 @@ export default {
 	wxUserInfoBaseUrl,
 	uploadBaseUrl,
 	addressBaseUrl,
-	cartBaseUrl
+	cartBaseUrl,
+	newOrderBaseUrl
 }

@@ -1,1 +1,10 @@
-/* pages/type/type.wxss */
+van-sidebar {
+	float: left;
+}
+
+.canvas {
+	width: 300px;
+	height: 300px;
+	background-color: pink;
+	margin-left: 150rpx;
+}

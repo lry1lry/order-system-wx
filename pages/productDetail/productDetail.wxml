@@ -26,7 +26,7 @@
 	<van-goods-action-icon icon="chat-o" text="客服" />
 	<van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" />
 	<van-goods-action-button text="加入购物车" type="warning" bindclick="addCart" />
-	<van-goods-action-button text="立即购买" />
+	<van-goods-action-button text="立即购买" bindclick="purchaseNow"/>
 </van-goods-action>
 <van-popup show="{{ show }}" position="bottom" closeable round bind:click-overlay="closePopup" bindclose="closePopup">
 	<view class="popup-head">
@@ -35,7 +35,18 @@
 	</view>
 	<view class="popup-name">名称：<text>{{product.name}}</text></view>
 	<view class="popup-num">数量：
-		<van-stepper value="{{ count }}" bind:change="changeStep" button-size="60rpx" input-width="80rpx" long-press="{{false}}" integer/>
+		<van-stepper value="{{ count }}" bind:change="changeStep" button-size="60rpx" input-width="80rpx" long-press="{{false}}" integer max="200" min="1"/>
 	</view>
 	<button class="confirm-button" bindtap="confirmAddCart">确认</button>
+</van-popup>
+<van-popup show="{{ show1 }}" position="bottom" closeable round bind:click-overlay="closePopup" bindclose="closePopup">
+	<view class="popup-head">
+		<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + product.proPic}}"></image>
+		<view class="product-price-popup"><text>￥</text>{{product.price}}</view>
+	</view>
+	<view class="popup-name">名称：<text>{{product.name}}</text></view>
+	<view class="popup-num">数量：
+		<van-stepper value="{{ count }}" bind:change="changeStep" button-size="60rpx" input-width="80rpx" long-press="{{false}}" integer max="200" min="1"/>
+	</view>
+	<button class="confirm-button" bindtap="confirmPurchase">确认</button>
 </van-popup>

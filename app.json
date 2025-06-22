@@ -6,11 +6,15 @@
 		"pages/my/my",
 		"pages/search/search",
 		"pages/productDetail/productDetail",
-		"pages/productList/productList"
+		"pages/productList/productList",
+		"pages/settle/settle",
+		"pages/pay/pay",
+		"pages/myOrder/myOrder",
+		"pages/orderDetail/orderDetail"
   ],
   "window": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "好食乐",
+		"navigationBarTitleText": "鲜香递",
 		"navigationBarBackgroundColor": "#fc2d3d"
 	},
 	"tabBar": {

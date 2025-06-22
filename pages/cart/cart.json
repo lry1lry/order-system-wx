@@ -1,3 +1,12 @@
 {
-	"usingComponents": {}
+	"usingComponents": {
+		"van-checkbox": "@vant/weapp/checkbox/index",
+		"van-checkbox-group": "@vant/weapp/checkbox-group/index",
+		"van-stepper": "@vant/weapp/stepper/index",
+		"van-submit-bar": "@vant/weapp/submit-bar/index",
+		"van-cell": "@vant/weapp/cell/index",
+		"van-cell-group": "@vant/weapp/cell-group/index",
+		"van-swipe-cell": "@vant/weapp/swipe-cell/index"
+	},
+	"navigationBarTitleText": "购物车"
 }

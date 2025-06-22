@@ -6,6 +6,7 @@ Page({
 		product: '',
 		count: 1,
 		show: false,
+		show1: false,
 		address: ""
 	},
 	async onLoad(e) {
@@ -40,7 +41,8 @@ Page({
 	},
 	closePopup() {
 		this.setData({
-			show: false
+			show: false,
+			show1: false
 		})
 	},
 	changeStep(e) {
@@ -101,6 +103,14 @@ Page({
 		}
 		const res = await axios.post(request.cartBaseUrl + '/insertCart', obj)
 		console.log(res)
+		if(res.data.data === "数量超过限制") {
+			wx.showToast({
+				title: '购物车中单款最多可添加200件',
+				icon: "none",
+				mask: true
+			})
+			return
+		}
 		if(res.data.data === "加入购物车成功") {
 			wx.showToast({
 				title: '加入购物车成功',
@@ -116,5 +126,39 @@ Page({
 				mask: true
 			})
 		}
+	},
+	purchaseNow() {
+		if(wx.getStorageSync('openid') === '') {
+			wx.showToast({
+				title: '您还未登录，登录之后再来使用该功能',
+				mask: true,
+				icon: "none"
+			})
+			return
+		}
+		this.setData({
+			show1: true
+		})
+	},
+	confirmPurchase() {
+		if(wx.getStorageSync('openid') === '') {
+			wx.showToast({
+				title: '您还未登录，登录之后再来使用该功能',
+				mask: true,
+				icon: "none"
+			})
+			return
+		}
+		if(this.data.address === "") {
+			wx.showToast({
+				title: '请先选择收货地址',
+				icon: "none",
+				mask: true
+			})
+			return
+		}
+		wx.navigateTo({
+			url: `/pages/settle/settle?place=detail&productId=${this.data.product.id}&productNum=${this.data.count}`,
+		})
 	}
 })

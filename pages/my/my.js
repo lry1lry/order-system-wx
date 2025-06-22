@@ -36,7 +36,9 @@ Page({
 		wx.hideLoading()
 		if(res1.data.msg === "success") {
 			const obj = {
-				openid: res1.data.data.openid
+				openid: res1.data.data.openid,
+				nickName: "",
+				avatarUrl: 'https://oss.lry.icu/login_pic.png'
 			}
 			const res3 = await axios.post(request.wxUserInfoBaseUrl + '/login', obj)
 			console.log(res3)
@@ -62,6 +64,11 @@ Page({
 						username: res3.data.data.nickName
 					})
 					wx.setStorageSync('nickName', res3.data.data.nickName)
+				}else {
+					this.setData({
+						username: ""
+					})
+					wx.setStorageSync('nickName', "")
 				}
 				wx.showToast({
 					title: '登录成功',
@@ -105,5 +112,16 @@ Page({
 				mask: true
 			})
 		}
+	},
+	async goMyOrder() {
+		if(wx.getStorageSync('openid') === '') {
+			const res = await wx.showModal({
+				content: '登录即可查看相关信息',
+			})
+			return
+		}
+		wx.navigateTo({
+			url: '/pages/myOrder/myOrder',
+		})
 	}
 })

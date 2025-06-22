@@ -1,0 +1,22 @@
+<view class="head">
+	<image src="/image/location1.png" class="location-pic"></image>
+	<view class="location-name van-ellipsis">{{address}}</view>
+</view>
+<view class="content">
+	<view wx:for="{{productList}}" wx:key="id">
+		<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + item.proPic}}"></image>
+		<view class="product-name van-ellipsis">{{item.name}}</view>
+		<view class="product-price"><text>￥</text>{{item.price}}</view>
+		<view class="product-num">×{{item.num}}</view>
+		<view class="delivery">
+			<view class="delivery-title">配送</view>
+			<view class="delivery-name">鲜香递专送</view>
+			<view class="delivery-time">预计30分钟之后送达</view>
+		</view>
+		<view class="line"></view>
+	</view>
+</view>
+<view class="empty"></view>
+<view class="bottom" style="top: {{top}}">
+<button bindtap="goPay">立即支付 ￥{{totalPrice + ""}}</button>
+</view>

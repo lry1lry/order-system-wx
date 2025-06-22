@@ -1,2 +1,176 @@
-/* pages/cart/cart.wxss */
+page {
+	background: #f3f7fa;
+}
 
+.head {
+	float: left;
+	width: 750rpx;
+	height: 100rpx;
+	background-color: white;
+}
+
+.head .head-title {
+	float: left;
+	height: 100rpx;
+	line-height: 100rpx;
+	margin-left: 30rpx;
+	font-size: 36rpx;
+	font-weight: 700;
+}
+
+.head image {
+	float: left;
+	width: 40rpx;
+	height: 40rpx;
+	margin-top: 30rpx;
+	margin-left: 25rpx;
+}
+
+.head .location-name {
+	float: left;
+	width: 300rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	color: #cdcdcd;
+	font-size: 26rpx;
+}
+
+.not-login {
+	float: left;
+	width: 750rpx;
+	background-color: white;
+}
+
+.not-login image {
+	float: left;
+	width: 250rpx;
+	height: 200rpx;
+	margin: 200rpx 250rpx 0 250rpx;
+}
+
+.not-login .not-login-text {
+	float: left;
+	width: 750rpx;
+	font-size: 30rpx;
+	text-align: center;
+	margin-top: 50rpx;
+}
+
+.empty-cart {
+	float: left;
+	width: 750rpx;
+	background-color: white;
+	text-align: center;
+	line-height: 400rpx;
+	font-size: 30rpx;
+	font-weight: 700;
+	color: #888;
+}
+
+.cart-item {
+	float: left;
+	width: 750rpx;
+	height: 200rpx;
+	background-color: white;
+	margin-top: 20rpx;
+}
+
+.cart-item van-checkbox {
+	float: left;
+	margin-top: 80rpx;
+	margin-left: 30rpx;
+}
+
+.cart-item image {
+	float: left;
+	width: 200rpx;
+	height: 200rpx;
+	border-radius: 15rpx;
+	margin-left: 20rpx;
+}
+
+.cart-item .product-name {
+	float: left;
+	width: 350rpx;
+	margin-left: 20rpx;
+	font-weight: 700;
+	font-size: 30rpx;
+}
+
+.cart-item .product-name {
+	float: left;
+	width: 350rpx;
+	margin-left: 20rpx;
+	font-weight: 700;
+	font-size: 30rpx;
+}
+
+.cart-item .price-and-step {
+	float: left;
+	width: 440rpx;
+	margin-top: 100rpx;
+}
+
+.cart-item .price-and-step .product-price {
+	float: left;
+	color: red;
+	font-size: 36rpx;
+	margin-left: 20rpx;
+	margin-top: 10rpx;
+}
+
+.cart-item .price-and-step .product-price text {
+	font-size: 24rpx;
+}
+
+.cart-item .price-and-step .van-stepper {
+	float: right;
+	color: red;
+	margin-right: 30rpx;
+	margin-bottom: 25rpx;
+}
+
+.submit-bar {
+	float: right;
+	height: 100rpx;
+}
+
+.submit {
+	position: relative;
+}
+
+.checkBox {
+	position: absolute;
+	top: 25rpx;
+	left: 30rpx;
+}
+
+.choose-all {
+	position: absolute;
+	top: 25rpx;
+	left: 80rpx;
+	font-size: 26rpx;
+}
+
+.empty {
+	float: left;
+	width: 750rpx;
+	height: 90rpx;
+	background-color: f3f7fa;
+}
+
+van-swipe-cell {
+	float: left;
+	width: 750rpx;
+}
+
+.van-swipe-cell__right {
+	float: left;
+	width: 110rpx;
+	height: 200rpx;
+	background-color: red;
+	color: white;
+	text-align: center;
+	line-height: 200rpx;
+	font-size: 30rpx;
+}

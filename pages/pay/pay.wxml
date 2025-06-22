@@ -1,0 +1,10 @@
+<view class="tip">请在下单后15分钟内完成付款，超时未付款订单将被自动取消。</view>
+<view class="count-down" hidden="{{!(isAllowPay === 1)}}">倒计时：{{remainTime}}</view>
+<view class="count-down" hidden="{{!(isAllowPay === 0)}}">订单入口已关闭</view>
+<view class="count-down" hidden="{{!(isAllowPay === 2)}}">订单已取消</view>
+<view class="count-down" hidden="{{!(isAllowPay === 3)}}">订单已支付</view>
+<canvas class="canvas" canvas-id="myQrcode"></canvas>
+<view class="price">￥{{price}}</view>
+<button class="finish-pay" bindtap="finishPay">已支付</button>
+<button class="cancel-order" bindtap="cancelOrder">取消订单</button>
+<view class="flush-code">没有显示二维码？点击<text bindtap="flushCode">这里</text>刷新一下</view>

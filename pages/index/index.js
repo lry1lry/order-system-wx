@@ -4,16 +4,16 @@ import axios from '../../utils/axios'
 
 Page({
 	data: {
-		productLbtPic: [],
-		bigTypeList: [],
-		hotProductList: []
+		productLbtPic: [], //商品轮播图数组
+		bigTypeList: [], //目录数组
+		hotProductList: [] //热门商品列表
 	},
 	onLoad() {
 		this.getProductLbtPic()
 		this.getBigType()
 		this.getHotProduct()
-		this.getSystemInfo()
 	},
+	//获取轮播图照片
 	async getProductLbtPic() {
 		const res = await axios.get(request.productBaseUrl + "/getProductLbtPic")
 		console.log(res)
@@ -21,6 +21,7 @@ Page({
 			productLbtPic: res.data.data
 		})
 	},
+	//获取目录照片
 	async getBigType() {
 		const res = await axios.get(request.bigTypeBaseUrl + "/getBigType")
 		console.log(res)
@@ -28,6 +29,7 @@ Page({
 			bigTypeList: res.data.data
 		})
 	},
+	//获取热门商品数据
 	async getHotProduct() {
 		const res = await axios.get(request.productBaseUrl + "/getHotProduct")
 		console.log(res)
@@ -35,15 +37,13 @@ Page({
 		 hotProductList: res.data.data
 		})
 	},
-	getSystemInfo() {
-		const res = wx.getWindowInfo()
-		console.log(res)
-	},
+	//去搜索页
 	goSearch: () => {
 		wx.navigateTo({
 			url: '/pages/search/search',
 		})
 	},
+	//去商品介绍页
 	goProductDetail(e) {
 		wx.navigateTo({
 			url: `/pages/productDetail/productDetail?id=${e.currentTarget.dataset.id}`,

@@ -20,7 +20,7 @@
 </view>
 <button open-type="chooseAvatar" id="avatar" bindchooseavatar="getAvatar"></button>
 <input type="nickname" id="name" class="nickname-input" model:value="{{username}}" bindinput="nickNameInput" />
-<van-cell title="我的订单" is-link title-class="title-class" icon="coupon-o"/>
+<van-cell title="我的订单" is-link title-class="title-class" icon="coupon-o" bindtap="goMyOrder"/>
 <view hidden="{{!(openId !== '')}}">
   <van-cell title="退出" is-link title-class="title-class" icon="ellipsis" bindtap="exit"/>
 </view>

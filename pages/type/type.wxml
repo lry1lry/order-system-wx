@@ -1,2 +1,6 @@
-<!--pages/type/type.wxml-->
-<text>pages/type/type.wxml</text>
+<van-sidebar active-key="{{ activeKey }}">
+  <van-sidebar-item title="标签名" />
+  <van-sidebar-item title="标签名" />
+  <van-sidebar-item title="标签名" />
+</van-sidebar>
+<canvas class="canvas" canvas-id="myQrcode"></canvas>

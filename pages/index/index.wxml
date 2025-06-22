@@ -1,17 +1,21 @@
+<!-- 头部搜索框 -->
 <view class="head">
 	<view class="search" bindtap="goSearch">
 		<icon type="search" size="34rpx"></icon>
 		<view class="search-text">搜索</view>
 	</view>
 </view>
+<!-- 轮播图 -->
 <swiper class="swiper" indicator-dots autoplay indicator-color="rgba(255, 255, 255, 0.9)" indicator-active-color="rgba(255, 0, 0, 1)" interval="2000" circular>
 	<swiper-item wx:for="{{productLbtPic}}" wx:key="id">
 		<image src="{{'https://oss.lry.icu/wx_store/swiperImgs/' + item.swiperPic}}"></image>
 	</swiper-item>
 </swiper>
+<!-- 首页目录 -->
 <view class="big-type">
 	<image src="{{'https://oss.lry.icu/wx_store/bigTypeImgs/' + item.image}}" wx:for="{{bigTypeList}}" wx:key="id"></image>
 </view>
+<!-- 热门推荐 -->
 <view class="hot-title">热门推荐</view>
 <view class="hot-item" wx:for="{{hotProductList}}" wx:key="id" bindtap="goProductDetail" data-id="{{item.id}}">
 	<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + item.proPic}}"></image>
