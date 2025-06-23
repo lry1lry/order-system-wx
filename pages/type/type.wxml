@@ -1,6 +1,19 @@
-<van-sidebar active-key="{{ activeKey }}">
-  <van-sidebar-item title="标签名" />
-  <van-sidebar-item title="标签名" />
-  <van-sidebar-item title="标签名" />
+<van-sidebar active-key="{{ activeKey }}" bindchange="changeSideBar">
+	<van-sidebar-item title="津贴联盟" />
+	<van-sidebar-item title="美食外卖" />
+	<van-sidebar-item title="甜点饮品" />
+	<van-sidebar-item title="蔬菜水果" />
+	<van-sidebar-item title="看病买药" />
+	<van-sidebar-item title="简食快餐" />
+	<van-sidebar-item title="天天神券" />
+	<van-sidebar-item title="午餐晚餐" />
+	<van-sidebar-item title="新店优惠" />
+	<van-sidebar-item title="全部分类" />
 </van-sidebar>
-<canvas class="canvas" canvas-id="myQrcode"></canvas>
+<view class="type-list {{'type' + item.id}}" wx:for="{{productList}}" wx:key="id">
+	<view class="type-list-title">{{item.titleName}}</view>
+	<view class="type-list-item" wx:for="{{item.productList}}" wx:key="id" bindtap="goProductDetail" data-id="{{item.id}}">
+		<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + item.proPic}}"></image>
+		<view class="product-name {{item.productName.length > 8 ? 'other': ''}} van-multi-ellipsis--l2">{{item.productName}}</view>
+	</view>
+</view>

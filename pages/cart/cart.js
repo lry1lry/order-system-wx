@@ -113,6 +113,9 @@ Page({
 	},
 	checkIsChooseAll() {
 		if(this.data.cartList.length === 0) {
+			this.setData({
+				isChooseAll: false
+			})
 			return
 		}
 		for(let i = 0; i < this.data.cartList.length; i ++) {

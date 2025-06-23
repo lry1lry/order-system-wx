@@ -48,5 +48,8 @@ Page({
 		wx.navigateTo({
 			url: `/pages/productDetail/productDetail?id=${e.currentTarget.dataset.id}`,
 		})
+	},
+	onTabItemTap() {
+		this.onLoad()
 	}
 })

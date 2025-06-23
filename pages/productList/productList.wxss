@@ -35,7 +35,6 @@ page {
 	margin-top: 20rpx;
 	border-top-left-radius: 40rpx;
 	border-top-right-radius: 40rpx;
-	overflow: scroll;
 }
 
 .warn-icon {
@@ -62,6 +61,10 @@ van-tabs {
 	width: 750rpx;
 	height: 250rpx;
 	margin-top: 20rpx;
+}
+
+.all-product-item:last-child {
+	margin-bottom: 20rpx;
 }
 
 .all-product-item image {

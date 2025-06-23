@@ -40,7 +40,7 @@ page {
 
 .order-item button {
 	float: left;
-	width: 120rpx;
+	width: 150rpx;
 	height: 40rpx;
 	font-size: 24rpx;
 	line-height: 40rpx;
@@ -115,8 +115,4 @@ page {
 
 .order-detail .order-detail-item:last-child {
 	margin-bottom: 25rpx
-}
-
-.margin-left {
-	margin-left: -120rpx;
 }

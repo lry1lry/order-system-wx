@@ -11,7 +11,8 @@ Page({
 		isAllowPay: 1,
 		remainTime: "",
 		time: 0,
-		orderNum: ""
+		orderNum: "",
+		place: ""
 	},
 	async onLoad(e) {
 		drawQrcode({
@@ -23,7 +24,8 @@ Page({
 		})
 		this.setData({
 			price: e.price,
-			orderNum: e.orderNum
+			orderNum: e.orderNum,
+			place: e.place
 		})
 		//根据订单号获取倒计时时间
 		const res = await axios.get(request.newOrderBaseUrl + `/getRemainTime/${e.orderNum}`)
@@ -31,13 +33,13 @@ Page({
 		//获取订单是否已经取消
 		const res1 = await axios.get(request.newOrderBaseUrl + `/getIsCancelOrPayOrder/${this.data.orderNum}`)
 		console.log(res1)
-		if(res1.data.data === "订单已取消") {
+		if (res1.data.data === "订单已取消") {
 			this.setData({
 				isAllowPay: 0
 			})
 			return
 		}
-		if(res1.data.data === "订单已支付") {
+		if (res1.data.data === "订单已支付") {
 			this.setData({
 				isAllowPay: 3
 			})
@@ -51,7 +53,7 @@ Page({
 			}
 			const res2 = await axios.post(request.newOrderBaseUrl + '/cancelOrderAuto', obj)
 			console.log(res2)
-			if(res2.data.data === "订单取消成功") {
+			if (res2.data.data === "订单取消成功") {
 				this.setData({
 					isAllowPay: 0
 				})
@@ -208,9 +210,11 @@ Page({
 			return
 		}
 		if (res1.data.data === "订单处理成功") {
-			//将购物车的相关内容删除
-			const res2 = await axios.get(request.cartBaseUrl + '/deleteCartByChecked')
-			console.log(res2)
+			//如果是从购物车中购买的，将购物车的相关内容删除
+			if (this.data.place === "cart") {
+				const res2 = await axios.get(request.cartBaseUrl + '/deleteCartByChecked')
+				console.log(res2)
+			}
 			//清除定时器
 			clearInterval(this.data.timer)
 			this.setData({

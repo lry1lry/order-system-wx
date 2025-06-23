@@ -3,7 +3,7 @@
 		<view class="product-value van-ellipsis">{{productValue}}</view>
 	</view>
 </view>
-<view class="content" style="height: {{contentHeight}}">
+<view class="content">
 	<icon type="warn" color="#c9c9c9" class="warn-icon" size="100" hidden="{{!(isShowError)}}"></icon>
 	<view class="not-found" hidden="{{!(isShowError)}}">抱歉！暂无相关商品</view>
 	<van-tabs active="{{ active }}" animated bindchange="changeTab" swipeable bindclick="clickTab">

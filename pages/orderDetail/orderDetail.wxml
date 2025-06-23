@@ -3,7 +3,7 @@
 	<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + order.proPic}}"></image>
 	<view class="product-name">{{order.name}}</view>
 	<button hidden="{{!(order.status === '0')}}" bindtap="goPay">去支付</button>
-	<view class="product-price" style="margin-left: {{ order.status === '0'? '-120rpx':'0'}}"><text>￥</text>{{order.price}}</view>
+	<view class="product-price" style="margin-left: {{ order.status === '0'? '-150rpx':'0'}}"><text>￥</text>{{order.price}}</view>
 	<view class="product-num">×{{order.num}}</view>
 </view>
 <view class="order-detail">
