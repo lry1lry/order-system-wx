@@ -49,6 +49,7 @@ Page({
 			url: `/pages/productDetail/productDetail?id=${e.currentTarget.dataset.id}`,
 		})
 	},
+	//点击tanbar时，重新加载
 	onTabItemTap() {
 		this.onLoad()
 	}

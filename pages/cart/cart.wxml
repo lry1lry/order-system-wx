@@ -1,13 +1,17 @@
+<!-- 头部标题和收获地址 -->
 <view class="head">
 	<view class="head-title">购物车</view>
 	<image src="/image/location.png" hidden="{{!(openid !== '')}}"></image>
 	<view class="location-name van-ellipsis" hidden="{{!(openid !== '')}}">{{address}}</view>
 </view>
+<!-- 没有登录展示的内容 -->
 <view class="not-login" style="height: {{contentHeight}}" hidden="{{!(openid === '')}}">
 	<image src="/image/jd_dog.jpg"></image>
 	<view class="not-login-text">登录后可同步购物车中的商品</view>
 </view>
+<!-- 购物车为空时展示的内容 -->
 <view class="empty-cart" style="height: {{contentHeight}}" hidden="{{!(openid !== '' && cartList.length === 0)}}">小车空啦，加进来看价格更方便！</view>
+<!-- 购物车列表 -->
 <view class="cart-item" wx:for="{{cartList}}" wx:key="index">
 	<van-swipe-cell right-width="{{ 65 }}">
 		<van-checkbox model:value="{{ item.isChecked }}" bindchange="changeCheckBox" checked-color="#f00" data-id="{{item.id}}" data-index="{{index}}"></van-checkbox>
@@ -20,7 +24,9 @@
 		<view slot="right" class="van-swipe-cell__right" bindtap="deleteProduct" data-id="{{item.id}}">删除</view>
 	</van-swipe-cell>
 </view>
+<!-- 空内容，防止底部内容被遮挡 -->
 <view class="empty"></view>
+<!-- 结算 -->
 <view hidden="{{!(openid !== '')}}">
 	<van-submit-bar price="{{ totalPrice * 100 }}" button-text="去结算" bind:submit="goSettle" tip="{{ true }}" bar-class="submit-bar" button-class="submit-button" class="submit" disabled="{{totalPrice === 0}}">
 		<van-checkbox model:value="{{ isChooseAll }}" bindchange="chooseAll" checked-color="#f00" class="checkBox"></van-checkbox>

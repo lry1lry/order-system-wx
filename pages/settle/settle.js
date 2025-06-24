@@ -5,7 +5,7 @@ Page({
 
 	data: {
 		address: "",
-		top: 0,
+		top: '0vw',
 		productList: [],
 		totalPrice: 0,
 		place: "",
@@ -23,7 +23,7 @@ Page({
 		const screenTop = wx.getWindowInfo().screenTop
 		const bili = windowHeight / windowWidth
 		this.setData({
-			top: (windowHeight - screenTop - 90 - wx.getWindowInfo().statusBarHeight) * bili / 7.5 + 'vw'
+			top: (windowHeight - screenTop - 90 - 130) * bili / 7.5 + 'vw'
 		})
 		if (wx.getStorageSync('openid') === '') {
 			return

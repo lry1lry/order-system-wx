@@ -18,5 +18,5 @@
 </view>
 <view class="empty"></view>
 <view class="bottom" style="top: {{top}}">
-<button bindtap="goPay">立即支付 ￥{{totalPrice + ""}}</button>
+	<button bindtap="goPay">立即支付 ￥{{totalPrice + ""}}</button>
 </view>
