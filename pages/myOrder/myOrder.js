@@ -4,9 +4,9 @@ import axios from '../../utils/axios'
 Page({
 
 	data: {
-		active: 0,
-		openid: "",
-		orderList: []
+		active: 0, //选中的标签
+		openid: "", //用户唯一id
+		orderList: [] //订单列表
 	},
 	async onLoad(options) {
 		//如果没有获取到openid,直接返回
@@ -22,6 +22,7 @@ Page({
 		//获取该用户的全部订单信息
 		this.getOrder(3)
 	},
+	// 改变标签页时触发的事件
 	changeTab(e) {
 		if (e.detail.index === 0) {
 			this.getOrder(3)
@@ -40,11 +41,13 @@ Page({
 			return
 		}
 	},
+	// 获取订单状态，e表示订单状态，3表示全部订单
 	async getOrder(e) {
 		wx.showLoading({
 			title: '正在查询订单信息',
 			mask: true
 		})
+		//获取订单信息，并将结果放入数组中
 		const res = await axios.get(request.newOrderBaseUrl + `/getAllOrderByOpenidAndStatus/${this.data.openid}/${e}`)
 		wx.hideLoading()
 		console.log(res)
@@ -62,6 +65,7 @@ Page({
 			orderList: list
 		})
 	},
+	// 去订单详情页
 	goOrderDetail(e) {
 		wx.navigateTo({
 			url: `/pages/orderDetail/orderDetail?id=${e.currentTarget.dataset.id}`,

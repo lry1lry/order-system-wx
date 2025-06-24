@@ -1,4 +1,6 @@
+<!-- 订单状态 -->
 <view class="order-status">{{order.status === "0" ? "待支付" : order.status === "1" ? "已支付" : "已取消"}}</view>
+<!-- 订单信息 -->
 <view class="order-item">
 	<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + order.proPic}}"></image>
 	<view class="product-name">{{order.name}}</view>
@@ -6,6 +8,7 @@
 	<view class="product-price" style="margin-left: {{ order.status === '0'? '-150rpx':'0'}}"><text>￥</text>{{order.price}}</view>
 	<view class="product-num">×{{order.num}}</view>
 </view>
+<!-- 订单细节 -->
 <view class="order-detail">
 	<view class="order-detail-item">
 		<view class="order-detail-item-title">应付金额：</view>

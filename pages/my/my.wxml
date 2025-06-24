@@ -1,4 +1,5 @@
 <view class="head">
+	<!-- 没有登录时显示的内容 -->
 	<view bindtap="login" hidden="{{!(openId === '')}}">
 		<image src="/image/not_login_pic.png"></image>
 		<view class="head-right">
@@ -6,6 +7,7 @@
 			<view class="not-login-text">点此账号登录</view>
 		</view>
 	</view>
+	<!-- 登录之后显示的内容 -->
 	<view hidden="{{!(openId !== '')}}">
 		<label for="avatar">
 			<image src="{{userPic}}"></image>
@@ -18,9 +20,13 @@
 		</view>
 	</view>
 </view>
+<!-- 获取头像按钮 -->
 <button open-type="chooseAvatar" id="avatar" bindchooseavatar="getAvatar"></button>
+<!-- 获取昵称输入框 -->
 <input type="nickname" id="name" class="nickname-input" model:value="{{username}}" bindinput="nickNameInput" />
-<van-cell title="我的订单" is-link title-class="title-class" icon="coupon-o" bindtap="goMyOrder"/>
+<!-- 我的订单单元格 -->
+<van-cell title="我的订单" is-link title-class="title-class" icon="coupon-o" bindtap="goMyOrder" />
+<!-- 退出单元格 -->
 <view hidden="{{!(openId !== '')}}">
-  <van-cell title="退出" is-link title-class="title-class" icon="ellipsis" bindtap="exit"/>
+	<van-cell title="退出" is-link title-class="title-class" icon="ellipsis" bindtap="exit" />
 </view>

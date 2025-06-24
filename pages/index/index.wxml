@@ -23,4 +23,3 @@
 	<view class="product-price"><text>￥</text>{{item.price}}</view>
 	<view class="sale">已售{{item.sale}}</view>
 </view>
-

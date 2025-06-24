@@ -34,7 +34,7 @@ Page({
 		const res = await axios.get(request.productBaseUrl + "/getHotProduct")
 		console.log(res)
 		this.setData({
-		 hotProductList: res.data.data
+			hotProductList: res.data.data
 		})
 	},
 	//去搜索页

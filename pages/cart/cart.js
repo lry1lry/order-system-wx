@@ -97,7 +97,7 @@ Page({
 		wx.hideLoading()
 		console.log(res)
 		//如果没有选中，不需要计算价格，提高性能
-		if(!this.data.cartList[e.currentTarget.dataset.index].isChecked) {
+		if (!this.data.cartList[e.currentTarget.dataset.index].isChecked) {
 			return
 		}
 		this.statisticPrice()
@@ -105,7 +105,7 @@ Page({
 	//全选反选
 	async chooseAll() {
 		//如果购物车内容为空，直接返回
-		if(this.data.cartList.length === 0) {
+		if (this.data.cartList.length === 0) {
 			return
 		}
 		//将原本复选框的结果取反
@@ -113,7 +113,7 @@ Page({
 			isChooseAll: !this.data.isChooseAll
 		})
 		//修改所有商品的复选框的内容
-		for(let i = 0; i < this.data.cartList.length; i ++) {
+		for (let i = 0; i < this.data.cartList.length; i++) {
 			this.setData({
 				[`cartList[${i}].isChecked`]: this.data.isChooseAll === true ? 1 : 0
 			})
@@ -131,15 +131,15 @@ Page({
 	//检查是否全选
 	checkIsChooseAll() {
 		//如果购物车数据为空，直接返回
-		if(this.data.cartList.length === 0) {
+		if (this.data.cartList.length === 0) {
 			this.setData({
 				isChooseAll: false
 			})
 			return
 		}
 		//遍历整个购物车，如果有一个商品没有选中，就不应该全选
-		for(let i = 0; i < this.data.cartList.length; i ++) {
-			if(!this.data.cartList[i].isChecked) {
+		for (let i = 0; i < this.data.cartList.length; i++) {
+			if (!this.data.cartList[i].isChecked) {
 				this.setData({
 					isChooseAll: false
 				})
@@ -158,8 +158,8 @@ Page({
 			totalPrice: 0
 		})
 		//遍历整个购物车，如果该商品没有选中，则不统计该商品的价格
-		for(let i = 0; i < this.data.cartList.length; i ++) {
-			if(!this.data.cartList[i].isChecked) {
+		for (let i = 0; i < this.data.cartList.length; i++) {
+			if (!this.data.cartList[i].isChecked) {
 				continue
 			}
 			this.setData({
@@ -169,7 +169,7 @@ Page({
 	},
 	//购物车数量超出限制时给出的提示信息
 	overlimit(e) {
-		if(e.detail === "plus") {
+		if (e.detail === "plus") {
 			wx.showToast({
 				title: '单款最多可买200件',
 				icon: "none",
@@ -183,7 +183,7 @@ Page({
 			content: '确定删除该物品吗',
 		})
 		console.log(res)
-		if(res.confirm) {
+		if (res.confirm) {
 			//通过id删除商品
 			const res1 = await axios.get(request.cartBaseUrl + `/deleteCartById/${e.currentTarget.dataset.id}`)
 			console.log(res1)
