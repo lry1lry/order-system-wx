@@ -135,6 +135,7 @@ page {
 	width: 750rpx;
 	height: 140rpx;
 	background-color: white;
+	bottom: 0;
 }
 
 .bottom button {

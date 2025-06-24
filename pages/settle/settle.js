@@ -5,7 +5,6 @@ Page({
 
 	data: {
 		address: "", //地址信息
-		top: '0vw', //距离顶部高度
 		productList: [], //商品列表
 		totalPrice: 0, //总价格
 		place: "", //跳转来源
@@ -17,14 +16,6 @@ Page({
 			place: e.place,
 			productId: e.productId || "",
 			productNum: e.productNum || ""
-		})
-		//获取距离顶部的距离
-		const windowHeight = wx.getWindowInfo().screenHeight
-		const windowWidth = wx.getWindowInfo().windowWidth
-		const screenTop = wx.getWindowInfo().screenTop
-		const bili = windowHeight / windowWidth
-		this.setData({
-			top: (windowHeight - screenTop - 90 - 130) * bili / 7.5 + 'vw'
 		})
 		//获取openid，如果没有，直接返回
 		if (wx.getStorageSync('openid') === '') {

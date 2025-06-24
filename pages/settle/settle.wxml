@@ -21,6 +21,6 @@
 <!-- 空部分，防止底部信息被阻挡 -->
 <view class="empty"></view>
 <!-- 底部立即支付 -->
-<view class="bottom" style="top: {{top}}">
+<view class="bottom">
 	<button bindtap="goPay">立即支付 ￥{{totalPrice + ""}}</button>
 </view>
