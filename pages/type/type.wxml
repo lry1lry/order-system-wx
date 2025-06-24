@@ -1,3 +1,4 @@
+<!-- 侧边导航 -->
 <van-sidebar active-key="{{ activeKey }}" bindchange="changeSideBar">
 	<van-sidebar-item title="津贴联盟" />
 	<van-sidebar-item title="美食外卖" />
@@ -10,6 +11,7 @@
 	<van-sidebar-item title="新店优惠" />
 	<van-sidebar-item title="全部分类" />
 </van-sidebar>
+<!-- 商品分类 -->
 <view class="type-list {{'type' + item.id}}" wx:for="{{productList}}" wx:key="id">
 	<view class="type-list-title">{{item.titleName}}</view>
 	<view class="type-list-item" wx:for="{{item.productList}}" wx:key="id" bindtap="goProductDetail" data-id="{{item.id}}">

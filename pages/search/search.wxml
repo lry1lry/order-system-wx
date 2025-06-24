@@ -1,21 +1,27 @@
+<!-- 顶部搜索框 -->
 <view class="input">
 	<view class="input-content">
-		<input type="text" bindinput="searchInput" model:value="{{searchValue}}" placeholder="请输入菜品关键字" focus/>
+		<input type="text" bindinput="searchInput" model:value="{{searchValue}}" placeholder="请输入菜品关键字" focus />
 		<image src="/image/x1.png" hidden="{{searchValue === '' ? true : false}}" bindtap="clearInput"></image>
 		<button bindtap="search">搜索</button>
 	</view>
 </view>
+<!-- 主体内容 -->
 <view class="content" style="height: {{contentHeight}}">
+	<!-- 找到相关内容时 -->
 	<view class="product-item" wx:for="{{searchProductList1}}" wx:key="id" hidden="{{!((searchValue !== '') && (searchProductList.length !== 0))}}" bindtap="goProductDetail" data-id="{{item.id}}" data-name="{{item.name}}">
 		<rich-text nodes="{{item.itemStr}}"></rich-text>
 	</view>
+	<!-- 没找到相关内容时 -->
 	<icon type="warn" color="#c9c9c9" class="warn-icon" size="100" hidden="{{!((searchValue !== '') && (searchProductList.length === 0))}}"></icon>
 	<view class="not-found" hidden="{{!((searchValue !== '') && (searchProductList.length === 0))}}">抱歉！暂无相关商品</view>
+	<!-- 搜索页的初始界面 -->
 	<view class="history" hidden="{{!(searchValue === '')}}">
 		<view class="history-head">
 			<view class="history-title">搜索历史</view>
 			<image src="/image/rabbish.png" bindtap="clearHistory"></image>
 		</view>
+		<!-- 历史记录 -->
 		<view class="history-content" wx:for="{{historyList}}" wx:key="index" bindtap="goProductDetail" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
 	</view>
 </view>

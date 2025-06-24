@@ -1,7 +1,9 @@
+<!-- 顶部地址 -->
 <view class="head">
 	<image src="/image/location1.png" class="location-pic"></image>
 	<view class="location-name van-ellipsis">{{address}}</view>
 </view>
+<!-- 主体内容 -->
 <view class="content">
 	<view wx:for="{{productList}}" wx:key="id">
 		<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + item.proPic}}"></image>
@@ -16,7 +18,9 @@
 		<view class="line"></view>
 	</view>
 </view>
+<!-- 空部分，防止底部信息被阻挡 -->
 <view class="empty"></view>
+<!-- 底部立即支付 -->
 <view class="bottom" style="top: {{top}}">
 	<button bindtap="goPay">立即支付 ￥{{totalPrice + ""}}</button>
 </view>

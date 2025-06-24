@@ -4,13 +4,13 @@ import axios from '../../utils/axios'
 Page({
 
 	data: {
-		address: "",
-		top: '0vw',
-		productList: [],
-		totalPrice: 0,
-		place: "",
-		productId: "",
-		productNum: ""
+		address: "", //地址信息
+		top: '0vw', //距离顶部高度
+		productList: [], //商品列表
+		totalPrice: 0, //总价格
+		place: "", //跳转来源
+		productId: "", //产品id
+		productNum: "" //产品数量
 	},
 	async onLoad(e) {
 		this.setData({
@@ -18,6 +18,7 @@ Page({
 			productId: e.productId || "",
 			productNum: e.productNum || ""
 		})
+		//获取距离顶部的距离
 		const windowHeight = wx.getWindowInfo().screenHeight
 		const windowWidth = wx.getWindowInfo().windowWidth
 		const screenTop = wx.getWindowInfo().screenTop
@@ -25,15 +26,18 @@ Page({
 		this.setData({
 			top: (windowHeight - screenTop - 90 - 130) * bili / 7.5 + 'vw'
 		})
+		//获取openid，如果没有，直接返回
 		if (wx.getStorageSync('openid') === '') {
 			return
 		}
 		const openid = wx.getStorageSync('openid')
+		// 获取地址信息
 		const res = await axios.get(request.addressBaseUrl + `/getDefaultAddress/${openid}`)
 		console.log(res)
 		this.setData({
 			address: res.data.data.provinceName + res.data.data.cityName + res.data.data.countryName + res.data.data.detailName
 		})
+		// 如果是从购物车过来的，获取购物车中选中商品的信息并渲染
 		if (e.place === "cart") {
 			const res2 = await axios.get(request.cartBaseUrl + `/getAllCartByChecked/${openid}`)
 			console.log(res2)
@@ -61,6 +65,7 @@ Page({
 			})
 			return
 		}
+		// 如果是从商品详情页过来的，根据商品id获取相关信息
 		if (e.place === "detail") {
 			const list = []
 			const res3 = await axios.get(request.productBaseUrl + `/getOneProductById/${e.productId}`)
@@ -78,12 +83,14 @@ Page({
 			})
 		}
 	},
+	// 去付款
 	async goPay() {
 		wx.showLoading({
 			title: '正在提交订单',
 			mask: true
 		})
 		let res = null
+		// 从购物车过来的，创建订单
 		if (this.data.place === "cart") {
 			const obj = {
 				openid: wx.getStorageSync('openid'),
@@ -94,6 +101,7 @@ Page({
 			wx.hideLoading()
 			console.log(res)
 		}
+		// 从商品详情页过来的，创建订单
 		if (this.data.place === "detail") {
 			const obj = {
 				openid: wx.getStorageSync('openid'),

@@ -1,33 +1,40 @@
+<!-- 商品展示图片 -->
 <image class="head-pic" src="{{'https://oss.lry.icu/wx_store/productImgs/' + product.proPic}}"></image>
+<!-- 商品价格 -->
 <view class="product-price"><text>￥</text>{{product.price}}</view>
+<!-- 商品名称 -->
 <view class="product-title">{{product.name}} {{product.description}}</view>
+<!-- 单元格 -->
 <van-cell title="已选：{{product.name}}, {{count}}个" icon="completed-o" title-class="cell-title" is-link>
 	<view slot="left-icon" class="custom-icon">11</view>
 </van-cell>
 <view hidden="{{!(address !== '')}}">
 	<van-cell title="预计30分钟之后送达" icon="logistics" title-class="cell-title" is-link>
-</van-cell>
+	</van-cell>
 </view>
 <view hidden="{{!(address === '')}}" bindtap="chooseAddress">
 	<van-cell title="请先添加收货地址" icon="wap-home-o" title-class="cell-title" is-link>
-</van-cell>
+	</van-cell>
 </view>
 <view hidden="{{!(address !== '')}}" bindtap="chooseAddress">
 	<van-cell icon="wap-home-o" title-class="cell-title" is-link>
-	<view slot="title">
-    <view class="van-ellipsis address">{{address}}</view>
-  </view>
-</van-cell>
+		<view slot="title">
+			<view class="van-ellipsis address">{{address}}</view>
+		</view>
+	</van-cell>
 </view>
+<!-- 商品介绍 -->
 <view class="product-intro">商品介绍</view>
 <image src="{{'https://oss.lry.icu/BigProductImgs/' + product.productIntroImgs}}" class="poster"></image>
 <view class="empty"></view>
+<!-- 购物车、立即购买 -->
 <van-goods-action>
 	<van-goods-action-icon icon="chat-o" text="客服" />
 	<van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" />
 	<van-goods-action-button text="加入购物车" type="warning" bindclick="addCart" />
-	<van-goods-action-button text="立即购买" bindclick="purchaseNow"/>
+	<van-goods-action-button text="立即购买" bindclick="purchaseNow" />
 </van-goods-action>
+<!-- 购物车弹出框 -->
 <van-popup show="{{ show }}" position="bottom" closeable round bind:click-overlay="closePopup" bindclose="closePopup">
 	<view class="popup-head">
 		<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + product.proPic}}"></image>
@@ -35,10 +42,11 @@
 	</view>
 	<view class="popup-name">名称：<text>{{product.name}}</text></view>
 	<view class="popup-num">数量：
-		<van-stepper value="{{ count }}" bind:change="changeStep" button-size="60rpx" input-width="80rpx" long-press="{{false}}" integer max="200" min="1"/>
+		<van-stepper value="{{ count }}" bind:change="changeStep" button-size="60rpx" input-width="80rpx" long-press="{{false}}" integer max="200" min="1" />
 	</view>
 	<button class="confirm-button" bindtap="confirmAddCart">确认</button>
 </van-popup>
+<!-- 立即购买弹出框 -->
 <van-popup show="{{ show1 }}" position="bottom" closeable round bind:click-overlay="closePopup" bindclose="closePopup">
 	<view class="popup-head">
 		<image src="{{'https://oss.lry.icu/wx_store/productImgs/' + product.proPic}}"></image>
@@ -46,7 +54,7 @@
 	</view>
 	<view class="popup-name">名称：<text>{{product.name}}</text></view>
 	<view class="popup-num">数量：
-		<van-stepper value="{{ count }}" bind:change="changeStep" button-size="60rpx" input-width="80rpx" long-press="{{false}}" integer max="200" min="1"/>
+		<van-stepper value="{{ count }}" bind:change="changeStep" button-size="60rpx" input-width="80rpx" long-press="{{false}}" integer max="200" min="1" />
 	</view>
 	<button class="confirm-button" bindtap="confirmPurchase">确认</button>
 </van-popup>
