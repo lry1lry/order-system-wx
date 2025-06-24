@@ -222,7 +222,7 @@ Page({
 		if (res1.data.data === "订单处理成功") {
 			//如果是从购物车中购买的，将购物车的相关内容删除
 			if (this.data.place === "cart") {
-				const res2 = await axios.get(request.cartBaseUrl + '/deleteCartByChecked')
+				const res2 = await axios.get(request.cartBaseUrl + `/deleteCartByChecked/${wx.getStorageSync('openid')}`)
 				console.log(res2)
 			}
 			//清除定时器
